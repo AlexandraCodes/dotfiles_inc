@@ -34,10 +34,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-
-
-
-Plugin 'severin-lemaignan/vim-minimap'
+" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mru.vim'
+" Plugin 'metakirby5/codi.vim'
+Plugin 'mattn/emmet-vim'
+"Plugin 'severin-lemaignan/vim-minimap'
 
 
 
@@ -177,7 +178,7 @@ map <leader>nn :NERDTreeToggle<CR>
 map <leader>nb :nerdtreefrombookmarks<space>
 map <leader>nf :nerdtreefind<cr>
 
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " GRUVBOX ---------------------------------------------------
@@ -188,10 +189,10 @@ let g:gruvbox_contrast_light='soft'
 let g:ycm_python_binary_path = '/usr/bin/python2'
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 
-" SYNTASTIC -------------------------------------------------
-let g:syntastic_python_checkers=['pyflakes']                " python
-let g:syntastic_javascript_checkers=['jshint']              " javascript
+let g:ycm_autoclose_preview_window_after_completion=1
 
+
+" SYNTASTIC -------------------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -201,8 +202,28 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_python_checkers=['pyflakes']                " python
+let g:syntastic_javascript_checkers=['jshint']              " javascript
+
 " COMMENTARY ------------------------------------------------
 " gc ------ comment things out in visual mode
 
 " FUGITIVE --------------------------------------------------
-set statusline=%{fugitive#statusline()}
+set statusline+=%{fugitive#statusline()}
+
+" MRU -------------------------------------------------------
+let MRU_Max_Entries = 200
+map <leader>f :MRU<CR>
+
+" CTRL-P ----------------------------------------------------
+" do I even want this plugin ?!? ----------------------------
+
+" MINIMAP ---------------------------------------------------
+"let g:minimap_show='<leader>mm'
+"let g:minimap_close='<leader>mc'
+"let g:minimap_update='<leader>mu'
+"let g:minimap_toggle='<leader>mm'
+" FIX MINIMAP -- FONT LOOKS LIKE BRAILLE -- WTF ?! ----------
+
+
+
