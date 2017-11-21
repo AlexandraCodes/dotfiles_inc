@@ -225,5 +225,11 @@ map <leader>f :MRU<CR>
 "let g:minimap_toggle='<leader>mm'
 " FIX MINIMAP -- FONT LOOKS LIKE BRAILLE -- WTF ?! ----------
 
+nnoremap <Up> :echomsg "use k"<cr>
+nnoremap <Down> :echomsg "use j"<cr>
+nnoremap <Right> :echomsg "use l"<cr>
+nnoremap <Left> :echomsg "use h"<cr>
+
+
 
 
